@@ -21,7 +21,3 @@ class Temperature:
         """ Cleans out the scraped content"""
         scraped_content = self.scrape()
         return scraped_content['temp'].replace("\xa0°C", "")
-
-t = Temperature("Serbia", "Belgrade")
-
-print(t.get())
