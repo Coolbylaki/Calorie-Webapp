@@ -14,4 +14,4 @@ class Temperature:
         request = requests.get(f"https://www.timeanddate.com/weather/{self.country}/{self.city}")
         content = request.text
         extractor = Extractor.from_yaml_file("temperature.yaml")
-        return extractor.extract(content)['temp'].replace('\xa0°C', "")
+        return float(extractor.extract(content)['temp'].replace('\xa0°C', ""))
